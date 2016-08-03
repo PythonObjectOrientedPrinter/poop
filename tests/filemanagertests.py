@@ -21,11 +21,11 @@ class FileManagerTest(unittest.TestCase):
 
     def test_can_read_line_one(self):
         self.fm.open_file('{0}listdirblueprint/{1}'.format(self.blueprints_path, 'test.gcode'))
-        line_content = self.fm.read_line()
+        line_content = self.fm.readline()
         self.assertEqual(line_content, '; This is a comment\n')
 
     def test_can_read_line_two_correctly(self):
         self.fm.open_file('{0}listdirblueprint/{1}'.format(self.blueprints_path, 'test.gcode'))
-        self.fm.read_line()
-        line_content = self.fm.read_line()
+        self.fm.readline()
+        line_content = self.fm.readline()
         self.assertEqual(line_content, 'G0 X100 Y100 Z0\n')

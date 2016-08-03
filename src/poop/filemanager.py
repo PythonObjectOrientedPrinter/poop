@@ -32,14 +32,8 @@ class FileManager:
     def read_file(self):
         return self.file.read()
 
-    def read_line(self):
-        line_content = ''
-        while self.current_character is not '\n' and self.current_character is not '':
-            self.current_character = self.file.read(1)
-            line_content += self.current_character
-
-        self.current_character = None
-        return line_content
+    def readline(self):
+        return self.file.readline()
 
     @staticmethod
     def listdir(path):
